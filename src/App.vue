@@ -1,6 +1,7 @@
 <template>
   <div id="app">
-    <Todos />
+    <!-- v-bind to pass data to another component -->
+    <Todos v-bind:todos="todos" />
   </div>
 </template>
 
