@@ -3,7 +3,7 @@
         <!-- v-bind to add key -->
         <!-- v-for to loop through array  -->
         <div v-bind:key="todo.id" v-for="todo in todos">
-            <TodoItem />
+            <TodoItem v-bind:todo="todo" />
         </div>
     </div>
 </template>
