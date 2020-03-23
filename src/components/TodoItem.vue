@@ -1,9 +1,12 @@
 <template>
     <!-- apply is-complete style if todo.completed is true -->
-    <div class="todo-item" v-bind:class="{'is-complete':todo.completed}">
-        <!-- v-on to add event listener -->
-        <input type="checkbox" v-on:change="markComplete" />
-        <p>{{todo.title}}</p>
+    <div class="todo-item">
+        <div class="item" v-bind:class="{'is-complete':todo.completed}">
+            <!-- v-on to add event listener -->
+            <input type="checkbox" v-on:change="markComplete" />
+            <p>{{todo.title}}</p>
+        </div>
+        <button class="delete">x</button>
     </div>
 </template>
 
@@ -26,13 +29,26 @@ export default {
         padding: 10px;
         border-bottom: 1px white dotted;
         display: flex;
+        justify-content: space-between;
     }
 
     .todo-item input{
         margin-right: 5px;
     }
 
+    .item{
+        display: flex;
+        align-items: center;
+    }
+
     .is-complete{
         text-decoration: line-through;
+    }
+
+    .delete{
+        padding: 4px 8px;
+        color: white;
+        background-color: #aa1c1c;
+        cursor: pointer;
     }
 </style>
