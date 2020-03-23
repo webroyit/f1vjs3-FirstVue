@@ -10,7 +10,13 @@
 <script>
 export default {
     name: "TodoItem",
-    props: ["todo"]
+    props: ["todo"],
+    methods: {
+        // toggle the checkbox
+        markComplete(){
+            this.todo.completed = !this.todo.completed;
+        }
+    }
 }
 </script>
 
