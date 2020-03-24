@@ -1,7 +1,8 @@
 <template>
     <div>
         <form>
-            <input type="text" name="title" placeholder="Add what to do" />
+            <!-- v-model to create two way data binding -->
+            <input type="text" v-model="title" name="title" placeholder="Add what to do" />
             <input type="submit" value="Add" class="btn" />
         </form>
     </div>
@@ -9,7 +10,12 @@
 
 <script>
 export default {
-    name: "AddTodo"
+    name: "AddTodo",
+    data(){
+        return{
+            title: ""
+        }
+    }
 }
 </script>
 
