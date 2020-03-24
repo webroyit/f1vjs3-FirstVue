@@ -10,7 +10,7 @@
 </template>
 
 <script>
-import uuid from "uuid";
+import { v4 as uuidv4} from "uuid";
 
 export default {
     name: "AddTodo",
@@ -21,16 +21,22 @@ export default {
     },
     methods:{
         // create todo object
-        addTodo(){
+        addTodo(e){
+            // prevent the page from reloading
+            e.preventDefault();
+
             const newTodo = {
                 // generate random id
-                id: uuid.v4(),
+                id: uuidv4(),
                 title: this.title,
                 completed: false
             }
 
             // pass them to the parent component
             this.$emit("add-todo", newTodo);
+
+            // reset the input
+            this.title = "";
         }
     }
 }

@@ -1,7 +1,8 @@
 <template>
   <div id="app">
     <Header />
-    <AddTodo />
+    <!-- v-on to get the object from the AddTodo component -->
+    <AddTodo v-on:add-todo="addTodo" />
     <!-- v-bind to pass data to another component -->
     <Todos v-bind:todos="todos" v-on:del-todo="deleteTodo" />
   </div>
@@ -46,6 +47,10 @@ export default {
     deleteTodo(id){
       // filter to return anything based on the condition
       this.todos = this.todos.filter(todo => todo.id !== id);
+    },
+    // add a new item
+    addTodo(newTodo){
+      this.todos = [...this.todos, newTodo];
     }
   } 
 }
