@@ -1,6 +1,7 @@
 <template>
   <div id="app">
     <Header />
+    <AddTodo />
     <!-- v-bind to pass data to another component -->
     <Todos v-bind:todos="todos" v-on:del-todo="deleteTodo" />
   </div>
@@ -9,12 +10,14 @@
 <script>
 import Header from './components/Header';
 import Todos from './components/Todos';
+import AddTodo from './components/AddTodo';
 
 export default {
   name: 'App',
   components: {
     Header,
-    Todos
+    Todos,
+    AddTodo
   },
   // store values
   data(){
