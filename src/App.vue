@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <!-- v-bind to pass data to another component -->
-    <Todos v-bind:todos="todos" />
+    <Todos v-bind:todos="todos" v-on:del-todo="deleteTodo" />
   </div>
 </template>
 
@@ -26,7 +26,7 @@ export default {
         {
           id: 2,
           title: "Clean disk",
-          completed: true
+          completed: false
         },
         {
           id: 3,

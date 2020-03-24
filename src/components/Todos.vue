@@ -3,7 +3,9 @@
         <!-- v-bind to add key -->
         <!-- v-for to loop through array  -->
         <div v-bind:key="todo.id" v-for="todo in todos">
-            <TodoItem v-bind:todo="todo" />
+            <!-- v-on get the child component event -->
+            <!-- $emit to pass a method or value -->
+            <TodoItem v-bind:todo="todo" v-on:del-todo="$emit('del-todo', todo.id)" />
         </div>
     </div>
 </template>
