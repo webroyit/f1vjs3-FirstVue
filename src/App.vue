@@ -13,7 +13,6 @@ export default {
   components: {
     Todos
   },
-
   // store values
   data(){
     return{
@@ -35,7 +34,14 @@ export default {
         }
       ]
     }
-  }
+  },
+  methods: {
+    // remove an item
+    deleteTodo(id){
+      // filter to return anything based on the condition
+      this.todos = this.todos.filter(todo => todo.id !== id);
+    }
+  } 
 }
 </script>
 
